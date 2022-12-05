@@ -14,4 +14,10 @@ int main()
 	std::cout << std::setw(10) << n << std::endl; // 
 
 	std::cout << std::setw(10) << std::setfill('#') << n << std::endl; // 
+
+
+	double d = 3.141592;
+
+	std::cout << d << std::endl; // 몇자리까지 나오는지 확인해 보세요
+
 }
