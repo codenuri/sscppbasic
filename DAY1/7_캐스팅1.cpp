@@ -19,13 +19,24 @@ int main()
 
 int main()
 {
-	const int c = 10;
+//	const int c = 10;	// 컴파일 시간 상수
+						// 컴파일러가 상수의 초기값을 알고 있다.
+						// 대부분 컴파일러는 c 사용시 매크로 처럼
+						// 값을 치환 합니다.
 
-	int* p = &c; // ??
+	int n = 10;
+	const int c = n;	// 실행시간 상수
+						// 컴파일러는 상수 초기값을 알수 없습니다.
+						// c 사용시 항상 메모리에서 읽어오는 코드 생성
+
+//	int* p = &c;	// error. 상수의 주소를 
+					// 상수가 아닌것을 가리키는 포인터에 담을수 없다
+
+	int* p = (int*)&c; // ok.. C 스타일 캐스팅은 거의 성공.!!
 
 	*p = 20;
 
-	std::cout << c << std::endl;
-	std::cout << *p << std::endl;
+	std::cout << c << std::endl;	// 10	20
+	std::cout << *p << std::endl;	// 20	20
 
 }
