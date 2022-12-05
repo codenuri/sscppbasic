@@ -14,7 +14,8 @@ int main()
 	foo(3);
 	foo( { 3 } ); // C++11 부터 가능
 
-	goo(p);	
+	goo( p );	
+	goo( { p } );
 	goo( {1, 2} ); // C++11 부터 가능. Point pt = {1,2}
 }
 
