@@ -18,6 +18,9 @@ int main()
 
 	double d = 3.141592;
 
+	std::cout << std::setprecision(10);
+
 	std::cout << d << std::endl; // 몇자리까지 나오는지 확인해 보세요
 
 }
+// cppreference.com 에서 "std::setw" 검색해보세요..
