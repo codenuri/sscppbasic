@@ -1,5 +1,5 @@
-﻿#include <cstdio>
-#include <iostream> 
+﻿#include <cstdio>   // C 언어 표준 입출력
+#include <iostream> // C++ 언어 표준 입출력을 위한 헤더.
 
 int main()
 {
