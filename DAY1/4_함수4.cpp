@@ -33,3 +33,25 @@ int main()
 	square(3.4);// 3.4를 보고 T=double로 추론
 
 }
+
+// 코드 폭팔(Code Bloat)
+// => 템플릿 사용시 너무나 많은 함수(클래스)가 생성되어서
+//    실행파일의 크기가 커지는 현상. 
+
+
+// square.h 추가해 보세요
+template<typename T> T square(T a);
+
+// square.cpp 추가해 보세요
+template<typename T>
+T square(T a)
+{
+	return a * a;
+}
+
+// 4_함수4-1.cpp 추가해 보세요.
+#include "square.h"
+int main()
+{
+	square(3);	// error 입니다. 왜 에러일까요 ?
+}
