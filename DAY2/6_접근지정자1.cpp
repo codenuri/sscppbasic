@@ -5,16 +5,27 @@
 // 프로그램에서!! 사람을 다루는 코드를 작성해야 한다.
 // "사람"이라는 타입을 먼저 설계하자.
 
+
+// 캡슐화(encapsulation)
+// => 멤버 데이타는 private 영역에 놓아서 외부의 잘못된 사용을 막는다
+// => 객체의 상태는 잘정의된 멤버 함수를 통해서만 변경될수 있다.
+
+// 정보은닉 
+// => 외부에서는 객체의 상태를 직접 확인할수 없다는 의미!!
+
+
 struct Person
 {
 private:
 	std::string name;
-	int  age;		
+	int  age;	
 
 public:
 	void set_age(int a)
 	{
-		age = a;
+		// 인자값의 유효성을 확인한후, 유효한 경우만 객체의 상태를 변경
+		if ( age > 0 && age < 150)
+			age = a;
 	}
 };
 int main()
