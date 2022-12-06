@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-
+#include <algorithm>
 // Swap를 만들어 봅시다.
 // 1. C 버전
 void Swap(int* a, int* b)
