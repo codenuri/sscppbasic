@@ -26,7 +26,8 @@ public:
 	Date after_days(int ds)
 	{
 		Date temp(year, month, day + ds);	// 잘못된 구현!!
-
+							// => 제대로 구현해 보세요.. => 도전 과제..!
+							// => 윤년 고려해야 하므로 쉽지 않습니다.
 		return temp;
 	}
 };
