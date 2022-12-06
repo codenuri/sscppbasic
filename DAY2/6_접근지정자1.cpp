@@ -13,6 +13,8 @@
 // 정보은닉 
 // => 외부에서는 객체의 상태를 직접 확인할수 없다는 의미!!
 
+// 거의 모든 객체지향 언어가 지원 하는 문법 입니다.
+// 단, Python 이 지원하지 않습니다.
 
 struct Person
 {
@@ -27,6 +29,7 @@ public:
 		if ( age > 0 && age < 150)
 			age = a;
 	}
+	int get_age() { return age; }
 };
 int main()
 {
@@ -37,5 +40,5 @@ int main()
 				 // age 가 private 영역에 있다면 에러!!
 	p.set_age(-10);
 
-				 
+	int n = p.age; // error.!! get_age()를 제공해서 읽어야 합니다.
 }
