@@ -19,13 +19,10 @@ public:
 		if (newsize > sz)	// 커지는 경우
 		{
 			int* tmp = new int[newsize];
-
 			memcpy(tmp, ptr, sizeof(int) * sz);
-
 			delete[] ptr;
 
 			ptr = tmp;
-
 			sz = newsize;
 		}
 		else
