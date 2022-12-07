@@ -25,4 +25,13 @@ int main()
 	Vector vv(4, 0);
 	const Vector cv(4, 0);
 
+	int n;
+	// 아래 4줄을 잘 생각해 보세요. 
+	//			// 원하는 것		// 현재 상태
+	vv.at(0) = 10;	// O		// O	
+	cv.at(0) = 10;	// X		// X
+
+	n = vv.at(0);	// O		// O
+	n = cv.at(0);	// O		// X
+	
 }
