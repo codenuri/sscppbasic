@@ -12,10 +12,14 @@ public:
 class Rect : public Shape
 {
 public:
+	// Shape 의 순수 가상함수인 Draw() 의 구현부를
+	// 제공하지 않으면 : Rect 도 추상 클래스
+	// 제공하면        : Rect는 추상 클래스가 아니다.
 };
+
 int main()
 {
-	Shape s; // error. 추상 클래스는 객체를 생성할수 없다.
+//	Shape s; // error. 추상 클래스는 객체를 생성할수 없다.
 	Rect  r; // ?
 }
 
