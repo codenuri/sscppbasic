@@ -34,12 +34,17 @@ void foo(Animal* p)
 	if (pdog != nullptr)
 		pdog->Run();
 }
-
 int main()
 {
 	Animal a;
 	Dog    d;
-
 	foo(&a);
 	foo(&d);
 }
+// Run Time Type Information => RTTI
+
+// C++ 4개의 캐스팅
+// static_cast
+// reinterpret_cast
+// const_cast
+// dynamic_cast
