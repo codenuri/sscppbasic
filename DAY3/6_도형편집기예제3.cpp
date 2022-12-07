@@ -7,22 +7,31 @@
 //    그래야, 기반 클래스 포인터로 파생 클래스를 묶어서 관리할때
 //    해당 기능을 사용할수 있다.
 
+// 4. 기반 클래스 함수 중에서 파생 클래스가 재정의 하게 되는 멤버 함수는
+//	  반드시 가상함수로 해야 한다.
+
 class Shape
 {
+	int color;
 public:
-	void draw() { std::cout << "draw shape" << std::endl; }
+	// 아래 2개의 멤버 함수는 파생 클래스가 재정의 할 필요 없습니다.
+	// 가상함수로 할 필요 없습니다.
+	int get_color() const { return color; }
+	void set_color(int c) { color = c; }
+
+	virtual void draw() { std::cout << "draw shape" << std::endl; }
 };
 
 class Rect : public Shape
 {
 public:
-	void draw() { std::cout << "draw rect" << std::endl; }
+	virtual void draw() override  { std::cout << "draw rect" << std::endl; }
 };
 
 class Circle : public Shape
 {
 public:
-	void draw() { std::cout << "draw circle" << std::endl; }
+	virtual void draw() override { std::cout << "draw circle" << std::endl; }
 };
 
 int main()
