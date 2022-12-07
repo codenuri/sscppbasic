@@ -5,7 +5,6 @@
 
 // 아래 Rect 에서 getArea() 에 const 를 붙이지 않으면 틀린 코드입니다.
 
-
 class Rect
 {
 	int x, y, w, h;
