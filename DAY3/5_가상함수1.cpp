@@ -42,16 +42,21 @@ int main()
 // p->Cry1() 을 어떤 함수로 연결할것인가 ?
 // => "함수 바인딩 ( function binding )" 
 
-// 1. static binding  
+// 1. static binding  ( early binding)
 //    => 컴파일 시간에 컴파일러가 어느 함수를 호출할지를 결정
 //	  => 컴파일 시간에는 p가 가리키는 객체가 어떤 객체인지는 알수 없다.
 //    => 단지 p의 타입이 "Animal*" 라는 것만 알수 있다.
 //    => 그래서, "Animal Cry1" 호출
+// 빠르다. 논리적이지 않다.
+// C++, C#
 
-
-// 2. dynamic binding  
+// 2. dynamic binding  (late binding)
 //	=> 컴파일 시간에는 p가 가리키는 곳을 조사하는 기계어 코드 생성.
 //  => 실행시, p가 가리키는 메모리를 조사후에 함수 호출 결정.
 //  => 실제 객체가 Dog 였다면 "Dog Cry1" 을 호출!
+// 느리다. 논리적이다.
+// Java, python, swift 등의 대부분의 객체지향 언어. 
+// C++, C# 의 virtual function 
+
 
 
