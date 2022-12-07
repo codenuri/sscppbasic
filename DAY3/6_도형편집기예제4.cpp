@@ -61,4 +61,6 @@ int main()
 
 // Open Close Principle( 개방 폐쇄의 법칙 )
 
+// => 다형성은 OCP 를 만족하는 아주 좋은 코드 입니다.
+
 
