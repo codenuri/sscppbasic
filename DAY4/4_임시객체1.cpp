@@ -8,7 +8,8 @@ public:
 	Point(int a, int b)	: x(a), y(b) { std::cout << "Point()" << std::endl;	}
 	~Point()            { std::cout << "~Point()" << std::endl;	}
 };
-
+// 핵심 1. 임시객체를 만드는 법 : 클래스이름()
+//      2. 임시객체의 수명.
 int main()
 {
 //	Point pt(1, 2); // named object
