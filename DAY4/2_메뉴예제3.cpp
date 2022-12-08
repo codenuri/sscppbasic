@@ -3,15 +3,30 @@
 #include <vector>
 #include <conio.h>
 
-class MenuItem
-{
+// 모든 메뉴의 공통의 기반 클래스
+class BaseMenu
+{	
 	std::string title;
+public:
+	BaseMenu(const std::string& title) : title(title) {}
+	virtual ~BaseMenu() {}
+
+	std::string get_title() const { return title; }
+
+	// 모든 메뉴는 선택될수 있다.
+	// 모든 파생 클래스가 지켜야하는 규칙은 반드시 기반 클래스에서
+	// 제공
+	virtual void command() = 0;
+};
+
+
+
+class MenuItem : public BaseMenu
+{
 	int id;
 public:
 	MenuItem(const std::string& title, int id)
-		: title(title), id(id) {}
-
-	std::string get_title() const { return title; }
+		: BaseMenu(title), id(id) {}
 
 	void command()
 	{
@@ -21,14 +36,13 @@ public:
 };
 
 
-class PopupMenu
+class PopupMenu : public BaseMenu
 {
-	std::string title;
-	std::vector<MenuItem*> v;
+	std::vector<BaseMenu*> v;
 public:
-	PopupMenu(const std::string& title) : title(title) {}
+	PopupMenu(const std::string& title) : BaseMenu(title) {}
 
-	void add_menu(MenuItem* p) { v.push_back(p); }
+	void add_menu(BaseMenu* p) { v.push_back(p); }
 
 
 	void command()
@@ -81,9 +95,9 @@ int main()
 
 	PopupMenu pm("오늘의 메뉴");
 
-	pm.add_menu(&kimbam); // 핵심!!!
+	pm.add_menu(&kimbam); // 핵심!!!???
+	pm.add_menu(&m1);
 	pm.add_menu(&m2);
-	pm.add_menu(&m3);
 
 	pm.command();
 }
