@@ -9,6 +9,9 @@ namespace std
 	{
 	public:
 		// 아래와 같은 함수가 모든 표준 타입에 대해서 제공됩니다.
+		// => 실제 출력은 아래와 같은 "printf" 가 아니라
+		// => 각 OS 의 system call 등을 사용합니다.
+
 		void operator<<(int n)    { printf("%d", n); }
 		void operator<<(double d) { printf("%lf", d); }
 		void operator<<(const char* s) { printf("%s", s); }
