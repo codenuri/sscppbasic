@@ -36,6 +36,11 @@ int main()
 					//    이름없는 객체가 이름이 생긴것 입니다.
 
 	cr.x = 10; // error. cr 는 상수 참조 입니다.
+
+	// C++ ARM 책 
+	// => CPU 의 ARM 이 아닙니다.
+	// => C++ Annoted Reference Manual(저자 C++창시자)
+	//    C++의 각 문법을 왜? 그렇게 설계 했는지 의도를 설명
 }
 
 
