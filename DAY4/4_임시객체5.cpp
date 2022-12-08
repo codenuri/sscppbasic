@@ -5,6 +5,7 @@ class Counter
 {
 	int cnt = 0;
 public:
+	~Counter() { std::cout << "~Counter" << std::endl; }
 	Counter Increment()
 	{
 		++cnt;
@@ -18,7 +19,8 @@ int main()
 //	c.Increment();
 //	c.Increment();
 //	c.Increment();
+	std::cout << "========================" << std::endl;
 	c.Increment().Increment().Increment();
-
+	std::cout << "========================" << std::endl;
 	std::cout << c.get() << std::endl;
 }
