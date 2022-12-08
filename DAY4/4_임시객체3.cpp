@@ -46,7 +46,14 @@ int main()
 	std::cout << "-----" << std::endl;
 }
 
+// 인자로 전달된 객체를 읽기만 할때
+// 반드시 인자를 "const-reference" 로 해야 합니다.
+// 1. 안전하고!
+// 2. 임시객체도 받을수 있습니다.
 
+void draw_line1(Point& pt1, Point& pt2) {}
+void draw_line2(const Point& pt1, const Point& pt2) {}
 
-
+draw_line1(Point(1, 1), Point(10, 10)); // error
+draw_line2(Point(1, 1), Point(10, 10)); // ok 
 
