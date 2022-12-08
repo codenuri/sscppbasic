@@ -35,6 +35,16 @@ int main()
 
 	std::cout << Point(1, 2); // 되는게 좋으세요 ?? 안되는게 좋으세요
 								// operator<<(cout, Point(1,2));
+	//----------------------------------------------------------
+
+	// std::cout 의 별명을 만들어 봅시다.
+	int n = 10;
+
+	std::ostream&       os1 = std::cout; // 상수가 아닌 별명
+	const std::ostream& os2 = std::cout; // 상수 별명
+
+	os1 << n; // os1.operator<<(n);   ok...
+	os2 << n; // os2.operator<<(n);   error. 
 }
 
 
