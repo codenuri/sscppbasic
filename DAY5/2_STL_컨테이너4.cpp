@@ -29,5 +29,20 @@ int main()
 	st.pop(); // 제거만
 
 	std::cout << st.top() << std::endl; // 10
+
+	//======================================
+	// 핵심 2. 컨테이너가 컨테이너를 보관하면 아주 유용한 코드를 만들수 있습니다.
+
+	std::vector<int> v1(10);
+	std::vector<std::list<int>> v2(10);
+
+	v1[0] = 10;
+
+	v2[0].push_back(1);
+	v2[0].push_back(2);
+
+	v2[1].push_back(10);
+	v2[1].push_back(20);
+
 }
 
