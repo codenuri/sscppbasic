@@ -5,10 +5,10 @@
 
 int main()
 {
-//	std::list<int>   s = { 1,2,3,4,5,6,7,8,9,10 };
+	std::list<int>   s = { 1,2,3,4,5,6,7,8,9,10 };
 //	std::vector<int> s = { 1,2,3,4,5,6,7,8,9,10 };
 
-	int s[10] = {1,2,3,4,5,6,7,8,9,10}; // raw array
+//	int s[10] = {1,2,3,4,5,6,7,8,9,10}; // raw array
 
 	// 1. 반복자의 정확한 타입
 	// => C++98 시절에는 이렇게 직접 코드를 작성했어야 합니다.
@@ -25,6 +25,9 @@ int main()
 	auto p1 = s.begin();		// s 가 raw array 라면 에러!
 	auto p2 = std::begin(s);	// s 가 raw array 라도 ok.. 
 
+
+	auto sz1 = s.size();
+	auto sz2 = std::size(s); // raw array 도 가능
 }
 
 
