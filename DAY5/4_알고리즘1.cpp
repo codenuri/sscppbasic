@@ -24,6 +24,11 @@ int main()
 
 	auto ret1 = std::find(s.begin(), s.end(), 3);
 	auto ret2 = std::find(v.begin(), v.end(), 3);
-	
 
 }
+// "알고리즘" 이라는 용어에 대해서
+
+// 일반적인 의미 : "문제를 해결하는 방법" 이라는 IT 용어
+
+// STL 에서의 의미 : "std::find()" 같은 멤버가 아닌 일반 함수를
+//					나타내는 용어
