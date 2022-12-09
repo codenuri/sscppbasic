@@ -8,14 +8,22 @@ int main()
 {
 	std::vector<int> v = { 1,2,3,4,5,6,7,8,9,10 };
 
-	std::cout << v.capacity() << ", " << v.size() << std::endl;
+	std::cout << v.capacity() << ", " << v.size() << std::endl; // 10, 10
+
 
 	auto p = std::remove_if(v.begin(), v.end(), [](int n) { return n % 2 == 0; });
 
+	std::cout << v.capacity() << ", " << v.size() << std::endl;	// 10, 10
 
-	std::cout << v.capacity() << ", " << v.size() << std::endl;
 
-	v.erase(p, v.end());
+	v.erase(p, v.end());	// size 만 변경. 메모리가 줄어드는것은 아닙
 
-	std::cout << v.capacity() << ", " << v.size() << std::endl;
+	std::cout << v.capacity() << ", " << v.size() << std::endl; // 10, 5
+
+	v.clear();	// 모든 요소 제거
+
+	std::cout << v.capacity() << ", " << v.size() << std::endl; // 10, 0
+
+	v.shrink_to_fit();
+	std::cout << v.capacity() << ", " << v.size() << std::endl; // 0, 0
 }
