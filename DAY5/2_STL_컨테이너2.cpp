@@ -26,5 +26,18 @@ int main()
 	std::cout << v.size() << std::endl;		// 4
 	std::cout << v.capacity() << std::endl; // 4
 
+	v.push_back(2); // 끝에 한개 추가
+					// 현재 상태는 size == capacity 이므로 
+					// 여유메모리공간이 없습니다.
+					// 메모리 재할당이 필요 합니다.
+					// 이 연산은 "expensive" 합니다.
+
+	// 여유 메모리가 없을때 v.push_back 으로 요소가 들어 오면
+	// g++ : 기존 메모리 크기의 2배로 키운다
+	// vc  : 기존 메모리 크기의 1.5배로 키운다
+	// 단, 버전에 따라 달라 질수 있습니다.
+
+	std::cout << v.size() << std::endl;		// 5
+	std::cout << v.capacity() << std::endl; // 6
 
 }
